@@ -1,0 +1,7 @@
+.tools/
+deployment.tgz
+node_modules/
+.vercel/
+.env
+.env.*
+
