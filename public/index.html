@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Fresh episode posts from SubsPlease with AniList search links and download magnets."
+    />
+    <title>Anime Current</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">AC</span>
+          <span>Anime Current</span>
+        </a>
+        <div class="top-actions">
+          <span>Auto-synced from SubsPlease RSS</span>
+          <button class="refresh" id="refresh-feed" type="button">Refresh Feed</button>
+          <a class="refresh" href="/api/posts">JSON API</a>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Live episode posts</p>
+          <h1>Fresh anime releases, grouped and ready to download.</h1>
+          <p class="hero-copy">
+            New RSS entries become clean episode posts with every available quality, magnet
+            links, torrent links, and AniList search attached without using the AniList API.
+          </p>
+          <div class="status-row" aria-label="Feed status">
+            <span class="status-pill" id="post-count">Loading posts</span>
+            <span class="status-pill" id="quality-count">Checking qualities</span>
+            <span class="status-pill" id="latest-date">Refreshing feed</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-labelledby="latest-posts">
+        <div class="section-head">
+          <div>
+            <h2 id="latest-posts">Latest Episodes</h2>
+            <span class="sync-note" id="sync-note">Preparing the latest feed</span>
+          </div>
+          <p>
+            Search by anime name or episode number. Each post keeps the episode page,
+            AniList lookup, and all quality downloads in one place.
+          </p>
+        </div>
+
+        <div class="filter-panel">
+          <input
+            class="search"
+            id="search"
+            type="search"
+            placeholder="Search anime, episode, or post title"
+            aria-label="Search posts"
+          />
+          <div class="count-box" id="shown-count">0 shown</div>
+        </div>
+
+        <div class="post-list" id="post-list" aria-live="polite"></div>
+        <div class="empty hidden" id="empty">
+          <h3>No matching posts</h3>
+          <p>Try another title or clear the search field.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Built for automatic episode indexing from public RSS metadata. Use a torrent
+        client for magnet links.
+      </footer>
+    </main>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
